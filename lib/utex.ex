@@ -82,9 +82,7 @@ defmodule Utex do
         UnixTime.iso8601_to_unix(opts[:iso], opts[:timezone])
 
       true ->
-        "No valid arguments given\n\n"
-        <>
-        get_usage()
+        "No valid arguments given\n\n" <> get_usage()
     end
   end
 end

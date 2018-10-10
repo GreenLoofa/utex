@@ -127,7 +127,7 @@ defmodule UnixTime do
       )
     ]
   end
-  
+
   defp parse_date([year, month, day, hour], tz) do
     iso8601_to_unix(
       "#{year}-#{format_num(month)}-#{format_num(day)}T#{format_num(hour)}:00:00Z",
