@@ -103,8 +103,10 @@ defmodule UnixTimeTest do
 
     test "Given YYYY/MM/DD-hh:mm:s, the correct unix time is returned" do
       assert get_unix("2017/01/01-12:30:9", "UTC") == 1_483_273_809
+      assert get_unix("2017/3/13-05:00:00", "EDT") == 1_489_395_600
     end
 
     ## TODO: Test invalid formats
+    ## TODO: Test other timezones
   end
 end
