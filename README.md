@@ -78,4 +78,12 @@ Here are some examples of how the command line tool can be used
 
 > utex -u 2017/3/13-05:00:00 -t EDT
 > 1489399200
+
+## Note: - there will be some strange behaviour around daylight savings timezones (ie. EDT above)
+##       - Not all timezones are supported
 ```
+
+## Future TODO
+- [ ] Add unit tests for more timezones
+- [ ] Implement more timezones (Currently only whatever `Timex` supports)
+- [ ] Resolve any issues with daylight savings time
