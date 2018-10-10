@@ -180,14 +180,10 @@ defmodule UnixTime do
   def iso8601_to_unix(iso8601_date, tz) do
     {:ok, date_time, _} = DateTime.from_iso8601(iso8601_date)
 
-    if is_nil(tz) do
-      DateTime.to_unix(date_time)
-    else
-      new_date_time = Timex.to_datetime(date_time, tz)
-
-      date_time
-      |> Timex.shift(seconds: -new_date_time.utc_offset)
-      |> DateTime.to_unix()
-    end
+    new_date_time = Timex.to_datetime(date_time, tz)
+    
+    date_time
+    |> Timex.shift(seconds: -new_date_time.utc_offset)
+    |> DateTime.to_unix()
   end
 end
