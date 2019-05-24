@@ -76,7 +76,7 @@ defmodule Utex do
         UnixTime.start_end(opts[:startend], opts[:timezone])
 
       !is_nil(opts[:unix]) ->
-        UnixTime.get_unix(opts[:unix], opts[:timezone])
+        UnixTime.get_unix(opts[:unix], opts[:timezone] || UnixTime.get_timezone())
 
       !is_nil(opts[:iso]) ->
         UnixTime.iso8601_to_unix(opts[:iso], opts[:timezone])

@@ -45,7 +45,7 @@ defmodule UnixTime do
     end
   end
 
-  defp get_timezone() do
+  def get_timezone() do
     {zone, result} = System.cmd("date", ["+%Z"])
     if result == 0, do: String.trim(zone)
   end
